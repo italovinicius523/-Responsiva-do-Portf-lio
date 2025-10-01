@@ -1,0 +1,53 @@
+/* MOBILE-FIRST: estilos base já cobrem <668px */
+
+/* Navbar mobile */
+.navbar__toggle {
+    display: block;
+    background: none;
+    border: 0;
+    font-size: 2rem;
+    cursor: pointer;
+  
+    &:focus {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
+    }
+  }
+  
+  .navbar__menu {
+    display: none;
+    position: absolute;
+    top: 60px; left: 0;
+    width: 100%;
+    background: $light;
+    flex-direction: column;
+    gap: $spacing-md;
+    padding: $spacing-md;
+  
+    &.is-open {
+      display: flex;
+    }
+  }
+  
+  /* DESKTOP (>=668px) */
+  @media (min-width: 668px) {
+    .navbar__toggle {
+      display: none;
+    }
+  
+    .navbar__menu {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      gap: $spacing-lg;
+      background: transparent;
+      width: auto;
+      padding: 0;
+    }
+  
+    .card-list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-lg;
+    }
+  }
+  
